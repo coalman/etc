@@ -1,0 +1,6 @@
+---
+- hosts: workstations
+  roles:
+    - git
+    - python
+    - google-chrome

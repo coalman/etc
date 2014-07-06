@@ -1,0 +1,9 @@
+---
+- name: google-chrome | add repo
+  sudo: true
+  copy:
+    src: google-chrome.repo
+    dest: /etc/yum.repos.d/google-chrome.repo
+- name: google-chrome | install
+  sudo: true
+  yum: pkg=google-chrome-beta state=latest

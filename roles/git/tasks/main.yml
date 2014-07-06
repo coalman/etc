@@ -1,0 +1,4 @@
+---
+- name: git | install
+  sudo: true
+  yum: pkg=git state=latest
