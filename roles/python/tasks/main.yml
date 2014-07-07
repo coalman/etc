@@ -13,3 +13,11 @@
 - name: python | virtualenvwrapper | install
   sudo: true
   pip: name=virtualenvwrapper
+
+- name: python | numpy | install
+  sudo: true
+  yum: pkg=numpy state=present
+
+- name: python | scipy | install
+  sudo: true
+  yum: pkg=scipy state=present
