@@ -30,3 +30,4 @@
     # only put apps that don't require any configuration here
     - git
     - tmux
+    - nginx
