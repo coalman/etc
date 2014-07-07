@@ -17,3 +17,10 @@
     - readline-devel
     - zlib-devel
     # end ruby-build
+
+- name: devel | apps | install
+  sudo: true
+  yum: name={{ item }} state=present
+  with_items:
+    # only put apps that don't require any configuration here
+    - git
