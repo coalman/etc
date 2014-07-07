@@ -6,6 +6,7 @@
     - python
     - ruby
     - zsh
+    - nodejs
     - dotfiles
     - emacs
     - google-chrome
