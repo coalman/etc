@@ -3,8 +3,8 @@ sudo yum update -y
 # install ansible
 sudo yum install -y ansible
 
-# TODO:
-# do we need to disable selinux?
+# TODO: could move this to ansible, but w/e
+sudo setenforce Permissive
 
 # run playbook
-ansible-playbook site.yml
+ansible-playbook workstation.yml
