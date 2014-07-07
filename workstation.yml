@@ -6,5 +6,6 @@
     - devel
     - python
     - ruby
+    - zsh
     - dotfiles
     - google-chrome

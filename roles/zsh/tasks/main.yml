@@ -1,0 +1,29 @@
+---
+- name: zsh | install
+  sudo: true
+  yum: pkg=zsh state=present
+
+- name: zsh | var shell_root
+  sudo: true
+  command: echo $SHELL
+  register: shell_root
+  ignore_errors: true
+
+- name: zsh | chsh shell_root
+  sudo: true
+  user:
+    name: root
+    shell: /bin/zsh
+  when: shell_root != '/bin/zsh'
+
+- name: zsh | var shell
+  command: echo $SHELL
+  register: shell
+  ignore_errors: true
+
+- name: zsh | chsh shell
+  sudo: true
+  user:
+    name: mcoleman
+    shell: /bin/zsh
+  when: shell != '/bin/zsh'
