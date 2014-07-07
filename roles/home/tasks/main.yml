@@ -27,7 +27,7 @@
     - pub
     - var
     - var/dwn
-    - var/venv
+    - var/python/env
     - var/vm
 
 - name: home | user-dirs.dirs

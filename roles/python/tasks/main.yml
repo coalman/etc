@@ -21,3 +21,8 @@
 - name: python | scipy | install
   sudo: true
   yum: pkg=scipy state=present
+
+- name: python | default env | create
+  command: virtualenv default
+  args:
+    chdir: ~/var/python/env
