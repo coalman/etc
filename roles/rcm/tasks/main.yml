@@ -1,0 +1,4 @@
+---
+- name: rcm | run install script
+  sudo: true
+  script: install-rcm.sh creates=/usr/local/bin/rcup
