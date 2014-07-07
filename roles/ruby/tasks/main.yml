@@ -9,16 +9,17 @@
     repo: "https://github.com/sstephenson/ruby-build.git"
     dest: ~/.rbenv/plugins/ruby-build
 
-- name: ruby | install | 1.9.3-p547
-  command: ~/.rbenv/bin/rbenv install 1.9.3-p547
+- name: ruby | install | 2.0.0-p481
+  command: ~/.rbenv/bin/rbenv install 2.0.0-p481
   args:
-    creates: ~/.rbenv/versions/1.9.3-p547
+    creates: ~/.rbenv/versions/2.0.0-p481
 
 - name: ruby | install | 2.1.0
   command: ~/.rbenv/bin/rbenv install 2.1.0
   args:
     creates: ~/.rbenv/versions/2.1.0
 
-# TODO: change this to a copy to ~/.rbenv/version
-- name: ruby | rbenv | global default
-  command: ~/.rbenv/bin/rbenv global 1.9.3-p547
+- name: ruby | rbenv | version
+  copy:
+    src: version
+    dest: ~/.rbenv/version
