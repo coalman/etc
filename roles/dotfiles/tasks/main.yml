@@ -1,4 +1,12 @@
 ---
-- name: rcm | run install script
+- name: dotfiles | rcm | install
   sudo: true
   script: install-rcm.sh creates=/usr/local/bin/rcup
+
+- name: dotfiles | clone
+  git:
+    repo: https://github.com/Coalman/dotfiles
+    dest: ~/.dotfiles
+
+- name: dotfiles | rcup
+  command: rcup -f
