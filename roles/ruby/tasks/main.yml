@@ -18,3 +18,7 @@
   command: ~/.rbenv/bin/rbenv install 2.1.0
   args:
     creates: ~/.rbenv/versions/2.1.0
+
+# TODO: change this to a copy to ~/.rbenv/version
+- name: ruby | rbenv | global default
+  command: ~/.rbenv/bin/rbenv global 1.9.3-p547
