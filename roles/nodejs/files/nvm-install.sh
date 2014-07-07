@@ -9,6 +9,6 @@ if ! nvm list | grep --quiet "v$1"; then
 fi
 
 # make it the default version if specified
-if [ -z "$2" ]; then
+if [ -n "$2" ]; then
   nvm alias default $1
 fi
