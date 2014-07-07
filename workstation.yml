@@ -1,8 +1,8 @@
 ---
 - hosts: workstations
   roles:
-    - home
     - git
+    - home
     - devel
     - python
     - ruby
