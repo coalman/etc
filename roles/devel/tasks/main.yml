@@ -1,4 +1,9 @@
 ---
+# requires libselinux-python (on fedora 20 by default)
+- name: devel | selinux | disable
+  sudo: true
+  selinux: state=disabled
+
 - name: devel | Development Tools | install
   sudo: true
   yum: name="@Development Tools" state=present
