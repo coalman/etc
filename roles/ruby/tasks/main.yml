@@ -1,0 +1,20 @@
+---
+- name: ruby | rbenv | clone
+  git:
+    repo: https://github.com/sstephenson/rbenv.git
+    dest: ~/.rbenv
+
+- name: ruby | ruby-build | clone
+  git:
+    repo: "https://github.com/sstephenson/ruby-build.git"
+    dest: ~/.rbenv/plugins/ruby-build
+
+- name: ruby | install | 1.9.3-p547
+  command: ~/.rbenv/bin/rbenv install 1.9.3-p547
+  args:
+    creates: ~/.rbenv/versions/1.9.3-p547
+
+- name: ruby | install | 2.1.0
+  command: ~/.rbenv/bin/rbenv install 2.1.0
+  args:
+    creates: ~/.rbenv/versions/2.1.0

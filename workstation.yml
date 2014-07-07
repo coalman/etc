@@ -3,5 +3,7 @@
   roles:
     - home
     - git
+    - devel
     - python
+    - ruby
     - google-chrome

@@ -1,0 +1,19 @@
+---
+- name: devel | Development Tools | install
+  sudo: true
+  yum: name="@Development Tools" state=latest
+
+- name: devel | C Development Tools and Libraries | install
+  sudo: true
+  yum: name="@C Development Tools and Libraries" state=latest
+
+- name: devel | libs | install
+  sudo: true
+  yum: name={{ item }} state=latest
+  with_items:
+    # ruby-build
+    - openssl-devel
+    - libyaml-devel
+    - readline-devel
+    - zlib-devel
+    # end ruby-build
