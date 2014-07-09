@@ -26,3 +26,10 @@
   command: virtualenv default
   args:
     chdir: ~/var/python/env
+    creates: ~/var/python/env/default
+
+- name: python | jrnl[encrypted] | install
+  pip:
+    name: jrnl[encrypted]
+    state: present
+    virtualenv: ~/var/python/env/default
