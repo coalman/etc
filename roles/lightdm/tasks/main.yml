@@ -18,3 +18,15 @@
   service:
     name: lightdm
     enabled: true
+
+- name: lightdm | bspwm-session
+  sudo: true
+  copy:
+    src: bspwm-session
+    dest: /usr/bin/bspwm-session
+
+- name: lightdm | bspwm.desktop
+  sudo: true
+  copy:
+    src: bspwm.desktop
+    dest: /usr/share/xsessions/bspwm.desktop
