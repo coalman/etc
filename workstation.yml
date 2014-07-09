@@ -3,6 +3,7 @@
   roles:
     - devel
     - home
+    - bspwm
     - lightdm
     - urxvt
     - python
