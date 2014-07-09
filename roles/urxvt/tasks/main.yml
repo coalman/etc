@@ -1,0 +1,4 @@
+---
+- name: urxvt | install
+  sudo: true
+  yum: pkg=rxvt-unicode-256color state=present

@@ -3,6 +3,7 @@
   roles:
     - devel
     - home
+    - urxvt
     - python
     - ruby
     - zsh
