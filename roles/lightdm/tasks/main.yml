@@ -1,0 +1,20 @@
+---
+- name: lightdm | install
+  sudo: true
+  yum: pkg=lightdm state=present
+
+- name: lightdm | gtk greeter | install
+  sudo: true
+  yum: pkg=lightdm-gtk state=present
+
+- name: lightdm | disable gdm
+  sudo: true
+  service:
+    name: gdm
+    enabled: false
+
+- name: lightdm | enable
+  sudo: true
+  service:
+    name: lightdm
+    enabled: true
