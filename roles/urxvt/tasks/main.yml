@@ -2,3 +2,16 @@
 - name: urxvt | install
   sudo: true
   yum: pkg=rxvt-unicode-256color state=present
+
+- name: urxvt | daemon | file
+  sudo: true
+  copy:
+    src: "urxvtd@.service"
+    dest: /etc/systemd/system/urxvtd@.service
+
+- name: urxvt | daemon | enable
+  sudo: true
+  service:
+    name: "urxvtd@{{ ansible_user_id }}"
+    enabled: true
+    state: started
