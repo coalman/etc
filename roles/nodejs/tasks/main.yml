@@ -21,3 +21,9 @@
     - express
     - gulp
     - mocha
+    - protractor
+
+- name: nodejs | webdriver-manager | update
+  command: ~/.nvm/v0.10.29/bin/webdriver-manager update
+  args:
+    creates: ~/.nvm/v0.10.29/lib/node_modules/protractor/selenium/selenium-server-standalone-2.42.2.jar
