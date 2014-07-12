@@ -3,7 +3,4 @@
 sudo yum update -y
 sudo yum install -y ansible git
 
-git clone https://github.com/Coalman/etc.git ~/etc
-
-cd ~/etc
-ansible-playbook workstation.yml
+ansible-pull -K -U 'https://github.com/Coalman/etc.git' -d ~/etc workstation.yml
