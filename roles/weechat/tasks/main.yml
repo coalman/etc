@@ -1,0 +1,6 @@
+---
+- name: weechat | install
+  sudo: true
+  yum:
+    name: weechat
+    state: present
