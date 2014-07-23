@@ -6,6 +6,7 @@
     - ruby
     - nodejs
     - dotfiles
+    - tig
     - zsh
     - emacs
     - urxvt
