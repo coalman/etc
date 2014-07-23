@@ -14,6 +14,7 @@
 - name: vagrant | detect vagrant
   command: rpm -q vagrant
   register: vagrant_check
+  ignore_errors: yes
 
 - name: vagrant | install 1.6.3
   sudo: true
