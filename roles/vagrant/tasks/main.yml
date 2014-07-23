@@ -5,6 +5,12 @@
     name: VirtualBox
     state: present
 
+- name: vagrant | install kmod-VirtualBox
+  sudo: true
+  yum:
+    name: "kmod-VirtualBox"
+    state: present
+
 - name: vagrant | install 1.6.3
   sudo: true
   yum:
