@@ -1,0 +1,6 @@
+---
+- name: irssi | install
+  sudo: true
+  yum:
+    name: irssi
+    state: present
