@@ -3,6 +3,7 @@
   git:
     repo: https://github.com/creationix/nvm.git
     dest: ~/.nvm
+    version: v0.11.2
 
 - name: nodejs | nvm | 0.10.29
   script: nvm-install.sh 0.10.29 --default
