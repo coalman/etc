@@ -1,0 +1,12 @@
+---
+- name: vagrant | install virtualbox
+  sudo: true
+  yum:
+    name: VirtualBox
+    state: present
+
+- name: vagrant | install 1.6.3
+  sudo: true
+  yum:
+    name: "https://dl.bintray.com/mitchellh/vagrant/vagrant_1.6.3_x86_64.rpm"
+    state: present
