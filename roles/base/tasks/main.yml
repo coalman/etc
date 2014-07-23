@@ -1,0 +1,64 @@
+---
+# required to use the selinux module
+- name: base | libselinux-python
+  sudo: true
+  yum:
+    name: libselinux-python
+    state: present
+
+- name: base | disable selinux
+  sudo: true
+  selinux: state=disabled
+
+- name: base | enable rpmfusion free
+  sudo: true
+  yum:
+    name: "http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_version }}.noarch.rpm"
+    state: present
+
+- name: base | enable rpmfusion nonfree
+  sudo: true
+  yum:
+    name: "http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_version }}.noarch.rpm"
+    state: present
+
+- name: base | install base packages
+  sudo: true
+  yum: name="{{ item }}" state=present
+  with_items:
+    - "@Development Tools"
+    - "@C Development Tools and Libraries"
+    - git
+    - tmux
+
+- name: base | create home directories
+  file:
+    name: ~/{{ item }}
+    state: directory
+  with_items:
+    - 2sort
+    - bin
+    - code
+    - code/open
+    - code/school
+    - code/work
+    - docs
+    - docs/books
+    - docs/jrnls
+    - docs/receipts
+    - docs/templates
+    - media
+    - media/games
+    - media/music
+    - media/pics
+    - media/vids
+    - public
+    - var
+    - var/dwn
+    - var/python/env
+    - var/vm
+
+- name: base | create sane user-dirs
+  copy:
+    src: user-dirs.dirs
+    dest: ~/.config/user-dirs.dirs

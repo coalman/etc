@@ -1,15 +1,14 @@
 ---
 - hosts: workstations
   roles:
-    - devel
-    - home
-    - bspwm
-    - lightdm
-    - urxvt
+    - base
     - python
     - ruby
-    - zsh
     - nodejs
     - dotfiles
+    - zsh
     - emacs
+    - urxvt
     - google-chrome
+    - bspwm
+    - lightdm
