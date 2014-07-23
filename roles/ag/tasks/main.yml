@@ -1,0 +1,6 @@
+---
+- name: ag | install
+  sudo: true
+  yum:
+    name: the_silver_searcher
+    state: present
