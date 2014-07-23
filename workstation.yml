@@ -8,9 +8,10 @@
     - dotfiles
     - tig
     - zsh
-    - irssi
-    - emacs
     - vagrant
+    - irssi
+    - zathura
+    - emacs
     - urxvt
     - google-chrome
     - gimp
