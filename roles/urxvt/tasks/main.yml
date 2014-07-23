@@ -15,3 +15,9 @@
     name: "urxvtd@{{ ansible_user_id }}"
     enabled: true
     state: started
+
+- name: urxvt | adobe-source-code-pro-fonts
+  sudo: true
+  yum:
+    name: "adobe-source-code-pro-fonts"
+    state: present
