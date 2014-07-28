@@ -30,6 +30,7 @@
     - "@C Development Tools and Libraries"
     - git
     - tmux
+    - "gnome-tweak-tool"
 
 - name: base | create home directories
   file:
