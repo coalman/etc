@@ -31,5 +31,6 @@
     - lightdm
     - lightdm-gtk
     - rxvt-unicode-256color
+    - tint2
     - VirtualBox
     - weechat
