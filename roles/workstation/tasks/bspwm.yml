@@ -1,0 +1,66 @@
+---
+- name: workstation | installing bspwm dependencies
+  sudo: true
+  yum:
+    pkg: "{{ item }}"
+    state: present
+  with_items:
+    - libxcb
+    - xcb-util
+    - xcb-util-devel
+    - xcb-util-wm
+    - xcb-util-wm-devel
+    - xcb-util-keysyms
+    - xcb-util-keysyms-devel
+
+- name: workstation | clone bspwm
+  git:
+    repo: https://github.com/baskerville/bspwm.git
+    dest: ~/code/open/bspwm
+    force: false
+    update: false
+
+- name: workstation | bspwm make
+  command: make
+  args:
+    chdir: ~/code/open/bspwm
+    creates: ~/code/open/bspwm/bspwm
+
+- name: workstation | bspwm make install
+  sudo: true
+  command: make install
+  args:
+    chdir: "/home/{{ ansible_user_id }}/code/open/bspwm"
+    creates: /usr/local/bin/bspwm
+
+- name: workstation | clone sxhkd
+  git:
+    repo: https://github.com/baskerville/sxhkd.git
+    dest: ~/code/open/sxhkd
+    force: false
+    update: false
+
+- name: workstation | sxhkd make
+  command: make
+  args:
+    chdir: ~/code/open/sxhkd
+    creates: ~/code/open/sxhkd/sxhkd
+
+- name: workstation | sxhkd make install
+  sudo: true
+  command: make install
+  args:
+    chdir: "/home/{{ ansible_user_id }}/code/open/sxhkd"
+    creates: /usr/local/bin/sxhkd
+
+- name: workstation | create bspwm-session
+  sudo: true
+  copy:
+    src: bspwm-session
+    dest: /usr/bin/bspwm-session
+
+- name: workstation | create bspwm.desktop
+  sudo: true
+  copy:
+    src: bspwm.desktop
+    dest: /usr/share/xsessions/bspwm.desktop

@@ -1,6 +1,0 @@
----
-- name: zathura | install
-  sudo: true
-  yum:
-    name: zathura
-    state: present

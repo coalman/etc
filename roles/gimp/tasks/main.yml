@@ -1,4 +1,0 @@
----
-- name: gimp | install
-  sudo: true
-  yum: pkg=gimp state=present

@@ -1,0 +1,8 @@
+---
+- include: packages.yml
+- include: home_dirs.yml
+- include: lightdm.yml
+- include: emacs.yml
+- include: urxvtd.yml
+- include: bspwm.yml
+- include: vagrant.yml

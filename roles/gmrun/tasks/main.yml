@@ -1,6 +1,0 @@
----
-- name: gmrun | install
-  sudo: true
-  yum:
-    name: gmrun
-    state: present

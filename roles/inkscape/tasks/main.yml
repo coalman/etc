@@ -1,6 +1,0 @@
----
-- name: inkscape | install
-  sudo: true
-  yum:
-    name: inkscape
-    state: present

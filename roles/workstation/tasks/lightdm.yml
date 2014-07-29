@@ -1,0 +1,12 @@
+---
+- name: workstation | disable gdm
+  sudo: true
+  service:
+    name: gdm
+    enabled: false
+
+- name: workstation | enable lightdm
+  sudo: true
+  service:
+    name: lightdm
+    enabled: true

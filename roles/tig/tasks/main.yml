@@ -1,6 +1,0 @@
----
-- name: tig | install
-  sudo: true
-  yum:
-    name: tig
-    state: present

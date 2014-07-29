@@ -1,0 +1,12 @@
+---
+- name: base | install pip
+  sudo: true
+  easy_install: name=pip
+
+- name: base | install virtualenv
+  sudo: true
+  pip: name=virtualenv
+
+- name: base | install virtualenvwrapper
+  sudo: true
+  pip: name=virtualenvwrapper

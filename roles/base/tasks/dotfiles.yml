@@ -1,0 +1,14 @@
+---
+- name: base | install rcm
+  script: install-rcm.sh creates=/usr/local/bin/rcup
+
+- name: base | clone
+  git:
+    # TODO: make a variable
+    repo: https://github.com/Coalman/dotfiles
+    dest: ~/.dotfiles
+    force: false
+    update: false
+
+- name: base | rcup
+  command: rcup -f

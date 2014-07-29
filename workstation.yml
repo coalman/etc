@@ -1,22 +1,4 @@
 ---
 - hosts: workstations
   roles:
-    - base
-    - python
-    - ruby
-    - nodejs
-    - dotfiles
-    - tig
-    - ag
-    - zsh
-    - vagrant
-    - weechat
-    - zathura
-    - emacs
-    - urxvt
-    - gmrun
-    - google-chrome
-    - gimp
-    - inkscape
-    - bspwm
-    - lightdm
+    - workstation

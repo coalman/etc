@@ -1,0 +1,26 @@
+---
+# required package to use the selinux module
+# NOTE: usually installed by default on fedora 20
+- name: base | installing libselinux-python
+  sudo: true
+  yum:
+    name: libselinux-python
+    state: present
+
+- name: base | disable selinux
+  sudo: true
+  selinux: state=disabled
+
+- name: base | install packages
+  sudo: true
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "@Development Tools"
+    - "@C Development Tools and Libraries"
+    - git
+    - the_silver_searcher
+    - tig
+    - tmux
+    - zsh

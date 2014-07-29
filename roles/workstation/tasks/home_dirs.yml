@@ -1,0 +1,29 @@
+---
+- name: workstation | create home dirs
+  file:
+    name: ~/{{ item }}
+    state: directory
+  with_items:
+    - 2sort
+    - code
+    - code/open
+    - code/me
+    - code/school
+    - code/work
+    - docs
+    - docs/jrnls
+    - docs/receipts
+    - docs/templates
+    - media
+    - media/books
+    - media/games
+    - media/music
+    - media/pics
+    - media/vids
+    - public
+    - var/vm
+
+- name: workstation | create sane user-dirs
+  copy:
+    src: user-dirs.dirs
+    dest: ~/.config/user-dirs.dirs
