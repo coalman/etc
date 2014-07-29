@@ -1,10 +1,10 @@
 ---
-- name: workstation | clone cask
+- name: clone cask
   git:
     repo: https://github.com/cask/cask.git
     dest: ~/.cask
 
-- name: workstation | cask install
+- name: cask install
   command: ~/.cask/bin/cask install
   args:
     chdir: ~/.emacs.d

@@ -1,17 +1,17 @@
 ---
 # required package to use the selinux module
 # NOTE: usually installed by default on fedora 20
-- name: base | installing libselinux-python
+- name: installing libselinux-python
   sudo: true
   yum:
     name: libselinux-python
     state: present
 
-- name: base | disable selinux
+- name: disable selinux
   sudo: true
   selinux: state=disabled
 
-- name: base | install packages
+- name: install packages
   sudo: true
   yum:
     name: "{{ item }}"

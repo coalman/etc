@@ -1,5 +1,5 @@
 ---
-- name: workstation | enable rpmfusion
+- name: enable rpmfusion
   sudo: true
   yum:
     name: "{{ item }}"
@@ -8,13 +8,13 @@
     - "http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_version }}.noarch.rpm"
     - "http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_version }}.noarch.rpm"
 
-- name: workstation | add google-chrome repo
+- name: add google-chrome repo
   sudo: true
   copy:
     src: google-chrome.repo
     dest: /etc/yum.repos.d/google-chrome.repo
 
-- name: workstation | install packages
+- name: install packages
   sudo: true
   yum:
     name: "{{ item }}"

@@ -1,14 +1,15 @@
 ---
-- name: base | install rcm
+- name: install rcm
   script: install-rcm.sh creates=/usr/local/bin/rcup
 
-- name: base | clone
+- name: clone
   git:
-    # TODO: make a variable
-    repo: https://github.com/Coalman/dotfiles
+    repo: '{{ base_dotfiles }}'
     dest: ~/.dotfiles
     force: false
     update: false
 
-- name: base | rcup
+- name: rcup
   command: rcup -f
+  args:
+    creates: ~/.emacs

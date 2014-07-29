@@ -1,11 +1,11 @@
 ---
-- name: workstation | create urxvtd file
+- name: create urxvtd file
   sudo: true
   copy:
     src: "urxvtd@.service"
     dest: /etc/systemd/system/urxvtd@.service
 
-- name: workstation | enabled urxvtd
+- name: enabled urxvtd
   sudo: true
   service:
     name: "urxvtd@{{ ansible_user_id }}"

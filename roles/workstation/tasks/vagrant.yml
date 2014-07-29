@@ -1,10 +1,11 @@
 ---
-- name: workstation | detect vagrant pkg
+- name: detect vagrant pkg
   command: rpm -q vagrant
   register: vagrant_check
   ignore_errors: yes
+  changed_when: False
 
-- name: workstation | install vagrant 1.6.3
+- name: install vagrant 1.6.3
   sudo: true
   yum:
     name: "https://dl.bintray.com/mitchellh/vagrant/vagrant_1.6.3_x86_64.rpm"

@@ -1,2 +1,12 @@
 ---
-# TODO: better way to set root and user's shell
+- name: root chsh to zsh
+  sudo: true
+  user:
+    name: root
+    shell: /bin/zsh
+
+- name: user chsh to zsh
+  sudo: true
+  user:
+    name: '{{ base_user }}'
+    shell: /bin/zsh

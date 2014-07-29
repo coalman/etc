@@ -1,7 +1,7 @@
 ---
 - include: packages.yml
 
-- name: base | create home dirs
+- name: create home dirs
   file:
     name: ~/{{ item }}
     state: directory

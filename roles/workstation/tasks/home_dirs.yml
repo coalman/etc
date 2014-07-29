@@ -1,5 +1,5 @@
 ---
-- name: workstation | create home dirs
+- name: create home dirs
   file:
     name: ~/{{ item }}
     state: directory
@@ -23,7 +23,7 @@
     - public
     - var/vm
 
-- name: workstation | create sane user-dirs
+- name: create sane user-dirs
   copy:
     src: user-dirs.dirs
     dest: ~/.config/user-dirs.dirs
