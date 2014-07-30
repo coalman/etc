@@ -23,6 +23,9 @@
     - public
     - var/vm
 
+- name: set machine directory for VirtualBox
+  command: VBoxManage setproperty machinefolder ~/var/vm
+
 - name: create sane user-dirs
   copy:
     src: user-dirs.dirs
