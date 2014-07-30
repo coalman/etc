@@ -1,14 +1,14 @@
 ---
-- name: create default python env
-  command: virtualenv default
-  args:
-    chdir: ~/var/python/env
-    creates: ~/var/python/env/default
+- name: installing python yum packages
+  sudo: true
+  yum: name='{{ item }}' state=present
+  with_items:
+    - numpy
+    - python-matplotlib
 
-- name: install python modules (into default env)
-  pip:
-    name: '{{ item }}'
-    state: present
-    virtualenv: ~/var/python/env/default
+- name: install global python modules
+  sudo: true
+  pip: name='{{ item }}' state=present
   with_items:
     - jrnl[encrypted]
+    - ipython[notebook]
