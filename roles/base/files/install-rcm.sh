@@ -6,5 +6,6 @@ tar -xvf rcm-1.2.3.tar.gz
 cd rcm-1.2.3
 
 ./configure
-make
-make install
+# TODO: kinda dangerous, should fix this
+sudo make
+sudo make install

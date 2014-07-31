@@ -1,2 +1,5 @@
+# vagrant
+.vagrant/
+
 # helper scripts
 fact-dump.json
