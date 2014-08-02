@@ -14,3 +14,5 @@
     - ipython[notebook]
     - scipy
     - scikit-learn
+    - pandas
+    - wercker
