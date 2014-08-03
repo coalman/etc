@@ -1,11 +1,15 @@
 ---
-- name: install setuptools
+- name: install python3
   sudo: true
-  yum: name=python-setuptools state=present
+  yum: name=python3 state=present
 
-- name: install pip
+- name: install python3-setuptools
   sudo: true
-  easy_install: name=pip
+  yum: name=python3-setuptools state=present
+
+- name: install pip for python 3
+  sudo: true
+  easy_install: name=pip executable=easy_install-3.3
 
 - name: install virtualenv
   sudo: true

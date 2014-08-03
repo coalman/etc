@@ -3,8 +3,8 @@
   sudo: true
   yum: name='{{ item }}' state=present
   with_items:
-    - numpy
-    - python-matplotlib
+    - python3-numpy
+    - python3-matplotlib
 
 - name: install global python modules
   sudo: true
