@@ -6,3 +6,4 @@
 - include: emacs.yml
 - include: urxvtd.yml
 - include: vagrant.yml
+- include: overtone.yml
