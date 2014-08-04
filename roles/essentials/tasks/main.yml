@@ -6,10 +6,10 @@
 
 - name: enable rpmfusion
   sudo: true
-  yum: name='http://download1.rpmfusion.org{{ item }}' state=present
+  yum: name='{{ item }}' state=present
   with_items:
-    - '/free/fedora/rpmfusion-free-release-{{ ansible_distribution_version }}.noarch.rpm'
-    - '/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_version }}.noarch.rpm'
+    - 'http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_version }}.noarch.rpm'
+    - 'http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_version }}.noarch.rpm'
 
 - name: install devel packages
   sudo: true
