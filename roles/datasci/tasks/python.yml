@@ -1,0 +1,24 @@
+---
+- name: install python3-numpy
+  sudo: true
+  yum: name=python3-numpy state=present
+
+- name: install python3-matplotlib
+  sudo: true
+  yum: name=python3-matplotlib state=present
+
+- name: install pandas
+  sudo: true
+  pip: name=pandas state=present
+
+- name: install ipython
+  sudo: true
+  pip: name=ipython[notebook] state=present
+
+- name: install scipy
+  sudo: true
+  pip: name=scipy state=present
+
+- name: install scikit-learn
+  sudo: true
+  pip: name=scikit-learn state=present
