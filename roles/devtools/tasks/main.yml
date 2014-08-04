@@ -1,7 +1,7 @@
 ---
 # tasks file for vagrant
 - name: create some home dirs
-  file: name='~/{{ item }}' state=present
+  file: name='~/{{ item }}' state=directory
   with_items:
     - code
     - code/class
