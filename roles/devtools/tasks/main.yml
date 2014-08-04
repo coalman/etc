@@ -1,0 +1,5 @@
+---
+# tasks file for vagrant
+- include: vagrant.yml
+- include: jrnl.yml
+- include: wercker.yml

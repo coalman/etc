@@ -1,0 +1,4 @@
+---
+- name: install wercker
+  sudo: true
+  pip: name=wercker state=present

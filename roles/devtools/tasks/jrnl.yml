@@ -1,0 +1,4 @@
+---
+- name: install jrnl
+  sudo: true
+  pip: name=jrnl[encrypted] state=present

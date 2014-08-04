@@ -1,5 +1,4 @@
 ---
-# tasks file for vagrant
 - name: install virtualbox packages
   sudo: true
   yum: name='{{ item }}' state=present
