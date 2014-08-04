@@ -1,0 +1,21 @@
+---
+# tasks file for emacs
+- name: install emacs
+  sudo: true
+  yum: name='{{ item }}' state=present
+  with_items:
+    - emacs
+    - emacs-color-theme
+
+- name: clone cask
+  git:
+    repo: https://github.com/cask/cask.git
+    dest: ~/.cask
+    force: false
+    update: false
+
+- name: cask install
+  command: ~/.cask/bin/cask install
+  args:
+    chdir: ~/.emacs.d
+    creates: ~/.emacs.d/.cask
