@@ -1,0 +1,28 @@
+---
+# setup rbenv and basic ruby
+- name: clone rbenv
+  git:
+    repo: https://github.com/sstephenson/rbenv.git
+    dest: ~/.rbenv
+    force: false
+    update: false
+
+- name: clone rbenv plugins
+  git:
+    repo: 'https://github.com/sstephenson/{{ item }}.git'
+    dest: '~/.rbenv/plugins/{{ item }}'
+    force: false
+    update: false
+  with_items:
+    - rbenv-gem-rehash
+    - ruby-build
+
+- name: build ruby 2.0.0-p481
+  command: ~/.rbenv/bin/rbenv install 2.0.0-p481
+  args:
+    creates: ~/.rbenv/versions/2.0.0-p481
+
+- name: set default rbenv version
+  command: echo '2.0.0-p481' > ~/.rbenv/version
+  args:
+    creates: ~/.rbenv/version

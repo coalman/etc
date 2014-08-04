@@ -1,0 +1,14 @@
+---
+# setup basic nodejs dev environment
+- name: clone nvm
+  git:
+    repo: https://github.com/creationix/nvm.git
+    dest: ~/.nvm
+    version: v0.13.0
+    force: false
+    update: false
+
+- name: install nodejs v0.10.29
+  shell: source ~/.nvm/nvm.sh && nvm install v0.10.29 && nvm alias default v0.10.29
+  args:
+    creates: ~/.nvm/v0.10.29/bin/node

@@ -1,0 +1,43 @@
+---
+# tasks file for essentials
+- name: disable selinux
+  sudo: true
+  selinux: state=disabled
+
+- name: enable rpmfusion
+  sudo: true
+  yum: name='http://download1.rpmfusion.org{{ item }}' state=present
+  with_items:
+    - '/free/fedora/rpmfusion-free-release-{{ ansible_distribution_version }}.noarch.rpm'
+    - '/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_version }}.noarch.rpm'
+
+- name: install devel packages
+  sudo: true
+  yum: name='{{ item }}' state=present
+  with_items:
+    - '@Development Tools'
+    - '@C Development Tools and Libraries'
+    - git
+    - tmux
+
+- name: install shell tools
+  sudo: true
+  yum: name='{{ item }}' state=present
+  with_items:
+    - the_silver_searcher
+    - tig
+    - weechat
+    - zsh
+
+- name: change root shell to zsh
+  sudo: true
+  user: name=root shell=/bin/zsh
+
+- name: change user shell to zsh
+  sudo: true
+  user: name='{{ ansible_user_id }}' shell=/bin/zsh
+
+- include: dotfiles.yml
+- include: python_devel.yml
+- include: ruby_devel.yml
+- include: nodejs_devel.yml

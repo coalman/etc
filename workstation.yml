@@ -1,4 +1,4 @@
 ---
 - hosts: workstations
   roles:
-    - workstation
+    - essentials
