@@ -1,5 +1,8 @@
 ---
 dependencies:
-  - { role: base,
-  base_user: '{{ ansible_user_id }}',
-  base_dotfiles: 'https://github.com/Coalman/dotfiles.git' }
+  - essentials
+  - dotfiles
+  - devtools
+  - desktop
+  - browser
+  - music

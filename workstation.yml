@@ -2,11 +2,4 @@
 - hosts:
     - localhost
   roles:
-    - essentials
-    - dotfiles
-    - devtools
-    - terminal
-    - emacs
-    - desktop
-    - browser
-    - music
+    - workstation

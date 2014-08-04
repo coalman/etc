@@ -1,9 +1,2 @@
 ---
-- include: packages.yml
-- include: home_dirs.yml
-- include: python.yml
-- include: lightdm.yml
-- include: emacs.yml
-- include: urxvtd.yml
-- include: vagrant.yml
-- include: overtone.yml
+# tasks file for workstation

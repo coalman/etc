@@ -2,3 +2,5 @@
 dependencies:
   - essentials
   - dotfiles
+  - emacs
+  - terminal
