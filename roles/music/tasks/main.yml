@@ -1,2 +1,4 @@
 ---
 # tasks file for music
+- include: jack.yml
+- include: overtone.yml

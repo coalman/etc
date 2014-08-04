@@ -1,0 +1,20 @@
+---
+- name: install jack packages
+  sudo: true
+  yum: name='{{ item }}' state=present
+  with_items:
+    - fftw
+    - jack-audio-connection-kit
+    - jack-audio-connection-kit-example-clients
+    - pulseaudio-module-jack
+    - qjackctl
+
+- name: copy asoundrc
+  copy:
+    src: asoundrc
+    dest: ~/.asoundrc
+
+- name: create ~/.pulse/default.pa
+  copy:
+    src: pulse_default.pa
+    dest: ~/.pulse/default.pa
