@@ -1,0 +1,22 @@
+---
+# tasks file for terminal
+- name: install rxvt
+  sudo: true
+  yum: name=rxvt-unicode-256color state=present
+
+- name: install source-code-pro font
+  sudo: true
+  yum: name=adobe-source-code-pro-fonts state=present
+
+- name: create urxvtd service file
+  sudo: true
+  copy:
+    src: 'urxvtd@.service'
+    dest: /etc/systemd/system/urxvtd@.service
+
+- name: enable urxvtd
+  sudo: true
+  service:
+    name: 'urxvtd@{{ ansible_user_id }}'
+    enabled: true
+    state: started
