@@ -8,6 +8,10 @@
   sudo: true
   yum: name=python3-setuptools state=present
 
+- name: install python3-devel
+  sudo: true
+  yum: name=python3-devel state=present
+
 - name: install pip
   sudo: true
   easy_install: name=pip executable=easy_install-3.3
