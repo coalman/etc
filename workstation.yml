@@ -2,3 +2,9 @@
 - hosts: workstations
   roles:
     - essentials
+    - dotfiles
+    - terminal
+    - emacs
+    - vagrant
+    - desktop
+    - browser

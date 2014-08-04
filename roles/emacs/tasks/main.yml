@@ -7,6 +7,19 @@
     - emacs
     - emacs-color-theme
 
+- name: create emacsd service
+  sudo: true
+  copy:
+    src: emacs.service
+    dest: /etc/systemd/usr/emacs.service
+
+- name: enable emacsd
+  sudo: true
+  service:
+    name: emacs
+    enabled: true
+    state: started
+
 - name: clone cask
   git:
     repo: https://github.com/cask/cask.git
