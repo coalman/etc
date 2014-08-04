@@ -1,0 +1,21 @@
+---
+# tasks file for vagrant
+- name: install virtualbox packages
+  sudo: true
+  yum: name='{{ item }}' state=present
+  with_items:
+    - kmod-VirtualBox
+    - VirtualBox
+
+- name: detect vagrant
+  command: rpm -q vagrant
+  register: vagrant_check
+  ignore_errors: yes
+  changed_when: false
+
+- name: install vagrant 1.6.3
+  sudo: true
+  yum:
+    name: 'https://dl.bintray.com/mitchellh/vagrant/vagrant_1.6.3_x86_64.rpm'
+    state: present
+  when: vagrant_check.rc == 1
