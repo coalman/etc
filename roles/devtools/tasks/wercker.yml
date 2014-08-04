@@ -1,4 +1,7 @@
 ---
 - name: install wercker
   sudo: true
-  pip: name=wercker state=present
+  pip:
+    name: wercker
+    state: present
+    executable: pip2.7
