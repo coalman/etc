@@ -1,0 +1,15 @@
+---
+- name: install lightdm packages
+  sudo: true
+  yum: name='{{ item }}' state=present
+  with_items:
+    - lightdm
+    - lightdm-gtk
+
+- name: disable gdm
+  sudo: true
+  service: name=gdm enabled=false
+
+- name: enable lightdm
+  sudo: true
+  service: name=lightdm enabled=true

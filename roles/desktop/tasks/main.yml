@@ -1,0 +1,5 @@
+---
+# tasks file for desktop
+- include: login_manager.yml
+- include: window_manager.yml
+- include: launcher.yml

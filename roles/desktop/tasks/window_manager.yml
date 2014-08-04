@@ -1,0 +1,4 @@
+---
+- name: install xfce4
+  sudo: true
+  yum: name=@xfce state=present
