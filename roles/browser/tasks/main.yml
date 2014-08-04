@@ -1,0 +1,11 @@
+---
+# tasks file for browser
+- name: add google-chrome repo
+  sudo: true
+  copy:
+    src: google-chrome.repo
+    dest: /etc/yum.repos.d/google-chrome.repo
+
+- name: install google-chrome-beta
+  sudo: true
+  yum: name=google-chrome-beta state=present
