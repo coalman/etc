@@ -1,10 +1,11 @@
 ---
-- hosts: workstations
+- hosts:
+    - localhost
   roles:
     - essentials
     - dotfiles
+    - devtools
     - terminal
     - emacs
-    - vagrant
     - desktop
     - browser
