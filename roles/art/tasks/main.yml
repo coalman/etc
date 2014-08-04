@@ -1,0 +1,8 @@
+---
+# tasks file for art
+- name: install packages
+  sudo: true
+  yum: name='{{ item }}' state=present
+  with_item:
+    - gimp
+    - inkscape
