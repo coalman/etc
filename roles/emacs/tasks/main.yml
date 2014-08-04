@@ -7,18 +7,18 @@
     - emacs
     - emacs-color-theme
 
+- name: ensure systemd user unit dir exists
+  file:
+    dest: ~/.config/systemd/user
+    state: directory
+
 - name: create emacsd service
-  sudo: true
   copy:
     src: emacs.service
-    dest: /etc/systemd/usr/emacs.service
+    dest: ~/.config/systemd/user/emacs.service
 
 - name: enable emacsd
-  sudo: true
-  service:
-    name: emacs
-    enabled: true
-    state: started
+  shell: systemctl --user enable emacs && systemctl --user start emacs
 
 - name: clone cask
   git:
