@@ -1,5 +1,18 @@
 ---
 # tasks file for vagrant
+- name: create some home dirs
+  file: name='~/{{ item }}' state=present
+  with_items:
+    - code
+    - code/class
+    - code/open
+    - code/me
+    - code/work
+    - docs
+    - docs/jrnls
+    - var
+    - var/vm
+
 - include: vagrant.yml
 - include: jrnl.yml
 - include: wercker.yml

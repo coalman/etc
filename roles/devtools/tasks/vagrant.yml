@@ -6,6 +6,9 @@
     - kmod-VirtualBox
     - VirtualBox
 
+- name: set machine directory for virtualbox vms
+  command: VBoxManage setproperty machinefolder ~/var/vm
+
 - name: detect vagrant
   command: rpm -q vagrant
   register: vagrant_check
