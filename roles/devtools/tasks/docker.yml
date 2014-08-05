@@ -1,0 +1,16 @@
+---
+# remove a docker package (for wm docks), conflicts with docker in fedora 20
+- name: remove docker package
+  sudo: true
+  yum: name=docker state=absent
+
+- name: install docker-io package
+  sudo: true
+  yum: name=docker-io state=present
+
+- name: enable docker
+  sudo: true
+  service:
+    name: docker
+    enabled: true
+    state: started

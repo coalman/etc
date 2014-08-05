@@ -14,5 +14,6 @@
     - var/vm
 
 - include: vagrant.yml
+- include: docker.yml
 - include: jrnl.yml
 - include: wercker.yml
