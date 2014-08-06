@@ -26,3 +26,11 @@
   command: echo '2.0.0-p481' > ~/.rbenv/version
   args:
     creates: ~/.rbenv/version
+
+- name: install default ruby gems
+  gem:
+    name: '{{ item }}'
+    state: present
+    executable: ~/.rbenv/shims/gem
+  with_items:
+    - rhc
